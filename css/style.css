@@ -40,18 +40,24 @@ section {
 }
 
 .navbar {
-  background: rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(12px);
-  padding: 0.95rem 0;
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 8px 26px rgba(15, 23, 42, 0.04);
+  backdrop-filter: blur(10px);
+  padding: 1.25rem 0;
+}
+
+.navbar .container-fluid {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .navbar-brand {
   color: var(--primary) !important;
   padding-left: 0 !important;
-  font-size: clamp(2rem, 2.4vw, 3rem) !important;
+  font-size: clamp(2.6rem, 3vw, 4rem) !important;
   font-weight: 800 !important;
-  letter-spacing: 0.08em;
+  letter-spacing: -0.06em;
+  line-height: 1;
 }
 
 .navbar-nav {
@@ -91,12 +97,22 @@ section {
 }
 
 .navbar-toggler {
-  border: 1px solid rgba(73, 199, 124, 0.4);
-  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  width: 58px;
+  height: 54px;
+  padding: 0.5rem;
 }
 
 .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.2rem rgba(73, 199, 124, 0.2);
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-size: 1.6rem;
 }
 
 .readmore,
@@ -125,41 +141,49 @@ section {
   min-height: 760px;
   display: flex;
   align-items: center;
-  background: linear-gradient(90deg, rgba(13, 20, 33, 0.82), rgba(13, 20, 33, 0.5)), url("../images/hero-bg.jpg") center/cover no-repeat;
+  background: linear-gradient(90deg, rgba(18, 26, 33, 0.38), rgba(18, 26, 33, 0.46)), url("../images/hero-bg.jpg") center/cover no-repeat;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(4, 8, 15, 0.2);
+  background: rgba(10, 17, 23, 0.18);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   color: #fff;
-  max-width: 680px;
-  padding: 4rem 0;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 0 4rem;
+  text-align: center;
 }
 
 .hero-content h1 {
-  margin: 0 0 1rem;
-  font-size: clamp(2.6rem, 5vw, 5rem);
-  line-height: 1.1;
+  margin: 0 auto 1.5rem;
+  max-width: 840px;
+  font-size: clamp(3.1rem, 5vw, 6rem);
+  line-height: 0.98;
   font-weight: 800;
+  letter-spacing: -0.06em;
 }
 
 .hero-content p {
-  margin-bottom: 2rem;
-  font-size: clamp(1.08rem, 1.9vw, 1.65rem);
-  color: rgba(255, 255, 255, 0.82);
+  margin: 0 auto 2.3rem;
+  max-width: 880px;
+  font-size: clamp(1.15rem, 2vw, 1.9rem);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.45;
 }
 
 .heroancor {
-  padding: 0.95rem 2.2rem;
+  padding: 0.95rem 2.7rem;
   border: 1px solid rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(6px);
+  min-width: 210px;
+  font-size: 1.05rem;
 }
 
 .heroancor:hover {
@@ -223,12 +247,14 @@ section {
   color: #fff;
   min-height: 100%;
   box-shadow: var(--shadow);
+  padding: 2.5rem 2.2rem 2rem;
 }
 
 .whybox h3 {
   margin: 0 0 1rem;
-  font-size: clamp(2rem, 2.4vw, 3rem);
-  line-height: 1.2;
+  font-size: clamp(2.6rem, 3vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
   color: #fff !important;
 }
 
@@ -267,23 +293,26 @@ section {
 .featurebox {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 1rem;
-  min-height: 90px;
-  padding: 1.1rem 1rem;
+  min-height: 122px;
+  padding: 1.2rem 1.2rem 1.2rem 1.6rem;
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 12px 20px rgba(15, 23, 42, 0.05);
   transition: all 0.3s ease;
 }
 
 .featurebox i {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  flex-shrink: 0;
 }
 
 .featurebox span {
-  font-size: clamp(1rem, 1.4vw, 1.5rem);
+  font-size: clamp(1.1rem, 1.6vw, 1.8rem);
   color: var(--accent);
+  line-height: 1.15;
 }
 
 .featurebox:hover {
@@ -294,6 +323,68 @@ section {
 
 .featurebox:hover span {
   color: var(--primary-dark);
+}
+
+.why-us .row,
+.course .row,
+.transfer .row,
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.why-us .col-md-4,
+.why-us .col-md-8,
+.why-us .col-md-8 .row > [class*="col-"],
+.course .col-md-4,
+.transfer .col-md-4,
+.footer .col-md-2,
+.footer .col-md-4 {
+  display: flex;
+}
+
+.why-us .col-md-4 > .whybox,
+.why-us .col-md-8 .row > [class*="col-"] > .border,
+.course .col-md-4 > .border,
+.transfer .col-md-4 > .border,
+.footer .col-md-4 > div,
+.footer .col-md-2 > div {
+  height: 100%;
+  width: 100%;
+}
+
+.course .col-md-4 > .border,
+.transfer .col-md-4 > .border {
+  display: flex;
+  flex-direction: column;
+}
+
+.course .col-md-4 > .border img,
+.transfer .col-md-4 > .border img {
+  height: 260px;
+  object-fit: cover;
+}
+
+.why-us .col-md-8 .row > [class*="col-"] > .border {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 1.75rem 1.25rem 1.5rem;
+}
+
+.why-us .col-md-8 .row > [class*="col-"] > .border .text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-us .col-md-4 > .whybox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1.5rem;
 }
 
 .courseborder::after {
@@ -427,9 +518,21 @@ section {
   }
 }
 
+@media (max-width: 1199.98px) {
+  .navbar .container-fluid {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .featurebox {
+    min-height: 106px;
+  }
+}
+
 @media (max-width: 991.98px) {
   .navbar-brand {
     padding-left: 0 !important;
+    font-size: clamp(2rem, 5vw, 3rem) !important;
   }
 
   .navbar-collapse {
@@ -450,10 +553,32 @@ section {
 
   .hero-content {
     max-width: 100%;
+    padding-top: 4rem;
+  }
+
+  .why-us .col-md-4,
+  .why-us .col-md-8 .row > [class*="col-"],
+  .course .col-md-4,
+  .transfer .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .featurebox span {
+    font-size: clamp(1rem, 2vw, 1.45rem);
+  }
+
+  .whybox h3 {
+    font-size: clamp(2.1rem, 4vw, 3rem);
   }
 }
 
 @media (max-width: 767.98px) {
+  .navbar .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .hero {
     min-height: 540px;
     background-position: center center;
@@ -466,6 +591,19 @@ section {
 
   .hero-content h1 {
     max-width: 100%;
+    font-size: clamp(2.2rem, 8vw, 3.8rem);
+  }
+
+  .hero-content p {
+    font-size: 1.08rem;
+  }
+
+  .why-us .col-md-4,
+  .why-us .col-md-8 .row > [class*="col-"],
+  .course .col-md-4,
+  .transfer .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   .about .row > div,
@@ -473,6 +611,11 @@ section {
   .transfer .row > div,
   .footer .row > div {
     margin-bottom: 1.5rem;
+  }
+
+  .featurebox {
+    min-height: 88px;
+    padding-left: 1.2rem;
   }
 
   .footer .headancor {
@@ -488,7 +631,7 @@ section {
   }
 
   .hero-content {
-    text-align: left;
+    text-align: center;
   }
 
   .readmore,
